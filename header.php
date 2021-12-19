@@ -26,11 +26,38 @@
 	<!-- Head Top -->
 	<div class='top-head'>
 		<div class='container'>
-						 kdbodfvdlkmvl
-				 <div id="header-widget-area" class="head-left chw-widget-area widget-area" role="complementary">
-				     ;ldmvb;dsflmv;efvm;e
+		     <div id="header-widget-area" class="head-left chw-widget-area widget-area" role="complementary">
+					<?php
+					if( have_rows('header_contact') ):
+
+						while ( have_rows('header_contact') ) : the_row();    	
+							
+							if( get_row_layout() == 'contact' ):
+
+								if( have_rows('header_phone') ):
+									while( have_rows('header_phone') ) : the_row();                
+										$phone = get_sub_field('phone');
+										echo $phone;?> <br>      
+									
+									<?php endwhile;
+								endif;                   
+									
+								if (have_rows('header_adr')) :
+									while( have_rows('header_adr') ) : the_row();                
+										$adr = get_sub_field('adr');
+										echo $adr;?> <br>      
+									
+									<?php endwhile; 
+								endif;	
+
+							endif;
+						endwhile;
+					endif; 
+					?>
 				 </div>
 				 <div id="header-widget-area" class="head-right chw-widget-area widget-area" role="complementary">
+					 jjjjjj
+				 </div>	
 		</div>
 	</div>
 	<!-- End Top menu -->

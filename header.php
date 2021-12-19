@@ -4,9 +4,7 @@
  *
  * Displays all of the head element and everything up until the "site-content" div.
  *
- * @package WordPress
- * @subpackage Lt_Theme
- * @since Ltheme 1.0
+ *
  */
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?> class="no-js">
@@ -18,6 +16,7 @@
 	<link rel="pingback" href="<?php echo esc_url( get_bloginfo( 'pingback_url' ) ); ?>">
 	<link href="https://fonts.googleapis.com/css2?family=Handlee&display=swap" rel="stylesheet">
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+	
 		<?php endif; ?>
 	<?php wp_head(); 	?>
 </head>
@@ -26,38 +25,55 @@
 	<!-- Head Top -->
 	<div class='top-head'>
 		<div class='container'>
-		     <div id="header-widget-area" class="head-left chw-widget-area widget-area" role="complementary">
-					<?php
-					if( have_rows('header_contact') ):
+		    <div id="header-widget-area" class="head-left chw-widget-area widget-area" role="complementary">
+				<?php
+				if( have_rows('header_contact') ):
 
-						while ( have_rows('header_contact') ) : the_row();    	
-							
-							if( get_row_layout() == 'contact' ):
+					while ( have_rows('header_contact') ) : the_row();    	
+						
+						if( get_row_layout() == 'contact' ):
 
-								if( have_rows('header_phone') ):
-									while( have_rows('header_phone') ) : the_row();                
-										$phone = get_sub_field('phone');
-										echo $phone;?> <br>      
-									
-									<?php endwhile;
-								endif;                   
-									
-								if (have_rows('header_adr')) :
-									while( have_rows('header_adr') ) : the_row();                
-										$adr = get_sub_field('adr');
-										echo $adr;?> <br>      
-									
-									<?php endwhile; 
-								endif;	
+							if( have_rows('header_phone') ):?>
+								<?php while( have_rows('header_phone') ) : the_row();                
+									$phone = get_sub_field('phone');?><span class="dashicons dashicons-phone"></span>
+									<?php echo $phone;?><br>
+										
+								
+								<?php endwhile;
+							endif; ?>
+										
+								
+						<?php if (have_rows('header_adr')) :
+								while( have_rows('header_adr') ) : the_row();                
+									$adr = get_sub_field('adr');?><span class="dashicons dashicons-location-alt"></span>
+									<?php echo $adr;?> <br>      
+								
+								<?php endwhile; 
+							endif;	
 
-							endif;
-						endwhile;
-					endif; 
-					?>
-				 </div>
-				 <div id="header-widget-area" class="head-right chw-widget-area widget-area" role="complementary">
-					 jjjjjj
-				 </div>	
+						endif;
+					endwhile;
+				endif; 
+				?>
+			</div>
+			<div id="header-widget-area" class="head-right chw-widget-area widget-area" role="complementary">
+				<?php if(get_field ('social_text')) : ?>
+					<?php echo the_field('social_text'); ?>
+				<?php endif; ?> 
+
+				<?php if(get_field ('instagram')) : ?>
+						<a href="<?php the_field('instagram') ?>" target = "_blanc"><span class="dashicons dashicons-instagram"></span></a>
+					<?php endif; ?>
+
+				<?php if(get_field ('you_tube')) : ?>
+					<a href="<?php the_field('you_tube') ?>" target = "_blanc"><span class="dashicons dashicons-youtube"></span></a>
+				<?php endif; ?>
+				   
+				<?php if(get_field ('facebook')) : ?>
+						<a href="<?php the_field('facebook') ?>" target = "_blanc"><span class="dashicons dashicons-facebook"></span></a>
+				<?php endif; ?>       
+
+			</div>				 
 		</div>
 	</div>
 	<!-- End Top menu -->

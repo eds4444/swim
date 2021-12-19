@@ -10,5 +10,5 @@ Template Name: Home
 
 <?php the_content(); ?>
 
-
+длываьлдыды
 <?php get_footer();  ?>

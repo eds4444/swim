@@ -68,7 +68,7 @@
 				<?php if(get_field ('you_tube')) : ?>
 					<a href="<?php the_field('you_tube') ?>" target = "_blanc"><span class="dashicons dashicons-youtube"></span></a>
 				<?php endif; ?>
-				   
+
 				<?php if(get_field ('facebook')) : ?>
 						<a href="<?php the_field('facebook') ?>" target = "_blanc"><span class="dashicons dashicons-facebook"></span></a>
 				<?php endif; ?>       
@@ -80,14 +80,10 @@
 	<header id="masthead" class="site-header" role="banner">
 			<div class="site-header-main">
 				<div class="site-branding">
-					<?php ltheme_the_custom_logo(); ?>
-					<?php if ( is_front_page() && is_home() ) : ?>
-						<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-					<?php else : ?>
-						<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-						<?php
-					endif;
-					 ?>
+				<?php if(get_field ('logo')) : ?>
+					<img src="<?php the_field('logo'); ?>">
+					<h1 style="color:#ffffff"><?php echo the_field('name_school');?></h1>
+				<?php endif; ?> 
 				</div><!-- .site-branding -->
 				<?php if ( has_nav_menu( 'primary' ) || has_nav_menu( 'social' ) ) { ?>
 					<button id="menu-toggle" class="menu-toggle"><?php _e( 'Menu', 'ltheme' ); ?></button>

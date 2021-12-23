@@ -9,6 +9,7 @@
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?> class="no-js">
 <head>
+<title><?php the_field('title_name'); ?></title>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="http://gmpg.org/xfn/11">
@@ -21,62 +22,74 @@
 	<?php wp_head(); 	?>
 </head>
 <body <?php body_class(); ?>>
+
 <div id="page" class="site">
 	<!-- Head Top -->
 	<div class='top-head'>
 		<div class='container'>
-		    <div id="header-widget-area" class="head-left chw-widget-area widget-area" role="complementary">
-				<?php
-				if( have_rows('header_contact') ):
+			<div id="header-widget-area" class="head-left chw-widget-area widget-area" role="complementary">
+				<div class="widget_text head-left-custom">
+					<div class="textwidget custom-html-widget">
+						<ul>
+							<?php
+							if( have_rows('header_contact') ):
 
-					while ( have_rows('header_contact') ) : the_row();    	
-						
-						if( get_row_layout() == 'contact' ):
+								while ( have_rows('header_contact') ) : the_row();    	
+									
+									if( get_row_layout() == 'contact' ):
 
-							if( have_rows('header_phone') ):?>
-								<?php while( have_rows('header_phone') ) : the_row();                
-									$phone = get_sub_field('phone');?><span class="dashicons dashicons-phone"></span>
-									<?php echo $phone;?><br>
-										
-								
-								<?php endwhile;
-							endif; ?>
-										
-								
-						<?php if (have_rows('header_adr')) :
-								while( have_rows('header_adr') ) : the_row();                
-									$adr = get_sub_field('adr');?><span class="dashicons dashicons-location-alt"></span>
-									<?php echo $adr;?> <br>      
-								
-								<?php endwhile; 
-							endif;	
+										if( have_rows('header_phone') ):?>
+											<?php while( have_rows('header_phone') ) : the_row();                
+												$phone = get_sub_field('phone');?>
+												<li class="fa fa-headphones"><a><?php echo $phone;?></a></li>													
+													
+											
+											<?php endwhile; ?>
+										<?php endif; ?><br><br>															
+											
+										<?php if (have_rows('header_adr')) :
+											while( have_rows('header_adr') ) : the_row();                
+												$adr = get_sub_field('adr');?>
+												<li class="fa fa-map"><a><?php echo $adr;?></a></li>														      
+											
+											<?php endwhile; ?>
+										<?php endif; ?>
 
-						endif;
-					endwhile;
-				endif; 
-				?>
+									<?php endif;?>
+								<?php endwhile; ?>
+							<?php endif;?>	
+														
+						</ul>
+					</div>
+				</div>				 
 			</div>
+
 			<div id="header-widget-area" class="head-right chw-widget-area widget-area" role="complementary">
-				<?php if(get_field ('social_text')) : ?>
-					<?php echo the_field('social_text'); ?>
-				<?php endif; ?> 
-
-				<?php if(get_field ('instagram')) : ?>
-						<a href="<?php the_field('instagram') ?>" target = "_blanc"><span class="dashicons dashicons-instagram"></span></a>
-					<?php endif; ?>
-
-				<?php if(get_field ('you_tube')) : ?>
-					<a href="<?php the_field('you_tube') ?>" target = "_blanc"><span class="dashicons dashicons-youtube"></span></a>
-				<?php endif; ?>
-
-				<?php if(get_field ('facebook')) : ?>
-						<a href="<?php the_field('facebook') ?>" target = "_blanc"><span class="dashicons dashicons-facebook"></span></a>
-				<?php endif; ?>       
-
-			</div>				 
+				<div class="widget_text head-left-custom">
+					<div class="textwidget custom-html-widget">
+						<ul>
+						    <?php if(get_field ('instagram')) : ?>   
+						    <li><a href="<?php the_field('instagram') ?>" target = "_blanc" class="fa fa-instagram fa-2x"></a></li>
+							<?php endif; ?>
+							<?php if(get_field ('you_tube')) : ?>
+							<li><a href="<?php the_field('you_tube') ?>" target = "_blanc" class="fa fa-youtube fa-2x"></a></li>
+							<?php endif; ?>
+							<?php if(get_field ('facebook')) : ?>
+							<li><a href="<?php the_field('facebook') ?>" target = "_blanc" class="fa fa-facebook fa-2x"></a></li>
+							<?php endif; ?>
+							<?php 
+							if(get_field ('social_text')) : ?><br>
+                                 <li><a class="lick-right"><?php echo the_field('social_text'); ?></a></li>								
+						    <?php endif;?> 
+							
+                        </ul>
+					</div>
+				</div>
+			 </div>
 		</div>
 	</div>
 	<!-- End Top menu -->
+
 	<header id="masthead" class="site-header" role="banner">
 			<div class="site-header-main">
 				<div class="site-branding">
@@ -124,11 +137,13 @@
 						) );
 					}
 				?>	
-			</div><!-- .site-header-main -->
-		</header><!-- .site-header -->
+            </div><!-- .site-header-main -->
+	</header><!-- .site-header -->
+</div>	
 	<div class="site-inner">
 		
 		<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'ltheme' ); ?></a>
 
 		<div id="content" class="site-content">
+	
 			

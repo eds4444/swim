@@ -2039,3 +2039,62 @@ body.page-template-default .status-publish {
 .sidebar {
     padding-right: 0px;
 }
+.about {
+    display: flex;
+    
+}
+.about-img {
+    
+    margin: 3px 10px 20px 10px;
+}
+.about-title-text {
+    
+    margin: 3px 12px 20px 10px;
+}
+h1 {
+    color: blue;    
+    font-family: cursive;
+    font-style: normal;
+    text-align: center;
+}
+h3  {
+    color: grey;
+    font-family: cursive;
+    font-style: normal;
+}
+hr {
+    border: none;
+    background: #00355D;
+    color: #00355D;
+    height: 20px;
+}
+.classes {
+    display: flex;
+
+}
+figure.img{
+    float: right;
+    width: 30%;
+    text-align: center; 
+    font-style: italic;
+    font-size: smaller;
+    text-indent: 0;
+    border: thin silver solid;
+    margin: 0.5em;
+    padding: 0.5em;   
+}
+.scaled {
+    width: 100%;
+}
+figure.img.img{
+    max-width: 100%;
+    height: auto;
+}
+figure.img figcaption{
+    padding: 0.1%;
+    font:italic 90% Georgia,serif;
+}
+
+
+
+

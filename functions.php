@@ -267,7 +267,10 @@ endif;
 function ltheme_javascript_detection() {
 	echo "<script>(function(html){html.className = html.className.replace(/\bno-js\b/,'js')})(document.documentElement);</script>\n";
 }
+
+
 add_action( 'wp_head', 'ltheme_javascript_detection', 0 );
+
 /**
  * Enqueues scripts and styles.
  *
@@ -1139,3 +1142,6 @@ function gltheme_theme_customizer( $wp_customize ) {
 		)
     )); 
 }
+add_theme_support( 'post-thumbnails' );
+set_post_thumbnail_size( 10, 10, false );
+

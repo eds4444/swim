@@ -17,8 +17,10 @@
 	<link rel="pingback" href="<?php echo esc_url( get_bloginfo( 'pingback_url' ) ); ?>">
 	<link href="https://fonts.googleapis.com/css2?family=Handlee&display=swap" rel="stylesheet">
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">
-	
-		<?php endif; ?>
+	<?php endif; ?>
+
+   
+
 	<?php wp_head(); 	?>
 </head>
 <body <?php body_class(); ?>>
@@ -41,7 +43,7 @@
 										if( have_rows('header_phone') ):?>
 											<?php while( have_rows('header_phone') ) : the_row();                
 												$phone = get_sub_field('phone');?>
-												<li class="fa fa-headphones"><a><?php echo $phone;?></a></li>													
+												<li class="fa fa-phone"><a><?php echo $phone;?></a></li>													
 													
 											
 											<?php endwhile; ?>
@@ -143,11 +145,4 @@
 		</div><!-- .site-header-main -->
 	</header><!-- .site-header -->
 
-	<div class="site-inner">
-		
-		<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'ltheme' ); ?></a>
-
-		<div id="content" class="site-content">
-
-	
 			

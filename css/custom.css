@@ -2095,6 +2095,13 @@ figure.img figcaption{
     font:italic 90% Georgia,serif;
 }
 
+.anchor {
+  display: block;
+  position: relative;
+  top: -250px;
+  visibility: hidden;
+}
+
 
 
 

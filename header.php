@@ -92,7 +92,7 @@
 	</div>
 	<!-- End Top menu -->
 
-	<header id="masthead" class="site-header" role="banner">
+	<header id="masthead" class="site-header" role="banner"><a href="#classes">classes</a>  <a href="#about">about</a>
 		<div class="site-header-main">
 
 			<div class="site-branding">

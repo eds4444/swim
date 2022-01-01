@@ -79,7 +79,46 @@ Template Name: Home
             <?php endwhile; ?>
         </div>
     <?php endif;?>
-</section>	
+</section>
+
+<hr>
+
+<section><a name="gallery" class="anchor"></a>
+        <?php
+
+        if( have_rows('gallery') ): ?>
+
+           <h1><?php the_field('name_gallery')  ?></h1>
+
+               <p><?php the_field('title_gallery')  ?></p>
+        
+
+            <div class="gallery"> 
+                  
+
+                <?php while( have_rows('gallery') ) : the_row();      
+                
+
+                    $singlе_gallery = get_sub_field('singlе_gallery');?>
+
+                    
+                        <figure class="single-gallery">                          
+                                                
+                                        
+                            <?php echo wp_get_attachment_image( $singlе_gallery['ID'], array( $singlе_gallery['width'], $singlе_gallery['height'] ) );?>                           
+                            
+                        </figure>
+                
+                
+                <?php endwhile;?>
+                        
+
+            </div>
+           
+            
+        <?php endif; ?>
+    
+</section>
 
 
 

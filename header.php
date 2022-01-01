@@ -92,24 +92,24 @@
 	</div>
 	<!-- End Top menu -->
 
-	<header id="masthead" class="site-header" role="banner">
+	<header class="site-header">	
 
-	    <div class="anchor-button">
-	       <a href="#classes">classes</a>  <a href="#about">about</a>
-		</div>
 		<div class="site-header-main">
-
+		
 			<div class="site-branding">
 				<?php if(get_field ('logo')) : ?>
 					<img src="<?php the_field('logo'); ?>">
 					<h1 style="color:#ffffff"><?php echo the_field('name_school');?></h1>
 				<?php endif; ?>
-			</div>
-			<div id="site-header-menu" class="site-header-menu">
+			</div>	
+
+			<div class="anchor-button">
+				<a href="#classes">classes</a>  <a href="#about">about</a>  <a href="#gallery">gallery</a> 
+		    </div>
 			
-			</div><!-- .site-header-menu -->
-		</div><!-- .site-header-main -->
+		</div>
 		
-	</header><!-- .site-header -->
+		
+	</header>
 
 			

@@ -320,6 +320,7 @@ h6 {
 	font-weight: 700;
 	margin: 0;
 	text-rendering: optimizeLegibility;
+	
 }
 
 p {
@@ -512,6 +513,7 @@ img {
 	max-width: 100%;
 	/* Adhere to container width. */
 	vertical-align: middle;
+	object-fit: cover;
 }
 
 del {

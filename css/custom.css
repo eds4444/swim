@@ -2070,6 +2070,7 @@ hr {
 }
 .classes {
     display: flex;
+   
 
 }
 figure.img{
@@ -2078,8 +2079,7 @@ figure.img{
     text-align: center; 
     font-style: italic;
     font-size: smaller;
-    text-indent: 0;
-    border: thin silver solid;
+    text-indent: 0;    
     margin: 0.5em;
     padding: 0.5em;   
 }
@@ -2098,11 +2098,37 @@ figure.img figcaption{
 .anchor {
   display: block;
   position: relative;
-  top: -250px;
-  visibility: hidden;
+  top: -200px;
+  visibility: visible;
 }
 .anchor-button{
+    text-align: right;
+    padding-top: 30px;
+}
+.gallery {
+    display:flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: auto;
+    float: left;
+    padding:15px;
+    margin: 10px;
     
+       
+       
+   }
+figure.single-gallery{
+    width: 30% ;
+    height: auto ;
+    margin: 10px ;    
+    object-fit: cover;
+    
+}
+p{
+   text-align: center;
+   color: grey;
+   font-family: cursive;
+   font-style: normal; 
 }
 
 

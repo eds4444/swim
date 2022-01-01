@@ -27,6 +27,9 @@
 /**
  * Ltheme only works in WordPress 4.4 or later.
  */
+add_theme_support( 'post-thumbnails' );
+set_post_thumbnail_size( 50, 50, true );
+
 if ( version_compare( $GLOBALS['wp_version'], '4.4-alpha', '<' ) ) {
 	require get_template_directory() . '/inc/back-compat.php';
 }
@@ -1142,6 +1145,4 @@ function gltheme_theme_customizer( $wp_customize ) {
 		)
     )); 
 }
-add_theme_support( 'post-thumbnails' );
-set_post_thumbnail_size( 10, 10, false );
 

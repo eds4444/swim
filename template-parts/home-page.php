@@ -84,13 +84,15 @@ Template Name: Home
 <hr>
 
 <section><a name="gallery" class="anchor"></a>
+   
+
         <?php
 
         if( have_rows('gallery') ): ?>
 
            <h1><?php the_field('name_gallery')  ?></h1>
 
-               <p><?php the_field('title_gallery')  ?></p>
+            <h3><p><?php the_field('title_gallery')  ?></p></h3>
         
 
             <div class="gallery"> 
@@ -116,9 +118,74 @@ Template Name: Home
             </div>
            
             
-        <?php endif; ?>
+        <?php endif; ?>    
     
 </section>
+
+
+<hr>
+
+
+<section><a name="instructors" class="anchor"></a>
+
+
+    <?php     
+
+    if( have_rows('instructors') ):?>
+
+        <h1><?php the_field('name_block_instructors') ?></h1>
+
+        <h3><p><?php the_field('title_instructors') ?></h3></p>
+
+
+    <div class="instructors">   
+       <?php while ( have_rows('instructors') ) : the_row();
+            
+            if( get_row_layout() == 'instr' ):
+
+                if( have_rows('instructor') ):
+                    
+                    while( have_rows('instructor') ) : the_row();                
+                        
+                        $instr_img = get_sub_field('instr_img');
+                        $instr_name = get_sub_field('instr_name');
+                        $major = get_sub_field('major'); ?>
+                        
+                        <?php echo wp_get_attachment_image( $instr_img['ID'], array( $instr_img['width'], $instr_img['height'] ) );?> 
+
+                        <?php echo $instr_name; ?>
+
+                        <?php
+                        if( have_rows('instr_achievements') ):
+                    
+                            while( have_rows('instr_achievements') ) : the_row();                
+                                
+                                $instr_achievement = get_sub_field('instr_achievement');
+                                
+                                echo $instr_achievement;
+        
+                            endwhile;                        
+                        
+                        endif;
+                
+                        echo $major;                     
+                
+                    
+                    endwhile;           
+                
+                endif;
+
+            endif;
+
+        endwhile; ?>
+
+    </div>     
+    
+    <?php endif; ?>
+
+</section>
+
+
 
 
 

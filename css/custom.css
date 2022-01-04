@@ -2109,12 +2109,9 @@ figure.img figcaption{
     display:flex;
     flex-wrap: wrap;
     width: 100%;
-    height: auto;
-    float: left;
+    height: auto;    
     padding:15px;
-    margin: 10px;
-    
-       
+    margin: 10px;       
        
    }
 figure.single-gallery{
@@ -2130,6 +2127,10 @@ p{
    font-family: cursive;
    font-style: normal; 
 }
+.instructors{
+    margin: 20px;
+}
+
 
 
 

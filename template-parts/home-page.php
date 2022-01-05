@@ -143,37 +143,45 @@ Template Name: Home
             
             if( get_row_layout() == 'instr' ):
 
-                if( have_rows('instructor') ):
-                    
-                    while( have_rows('instructor') ) : the_row();                
-                        
-                        $instr_img = get_sub_field('instr_img');
-                        $instr_name = get_sub_field('instr_name');
-                        $major = get_sub_field('major'); ?>
-                        
-                        <?php echo wp_get_attachment_image( $instr_img['ID'], array( $instr_img['width'], $instr_img['height'] ) );?> 
+                if( have_rows('instructor') ): ?>
 
-                        <?php echo $instr_name; ?>
-
-                        <?php
-                        if( have_rows('instr_achievements') ):
-                    
-                            while( have_rows('instr_achievements') ) : the_row();                
-                                
-                                $instr_achievement = get_sub_field('instr_achievement');
-                                
-                                echo $instr_achievement;
-        
-                            endwhile;                        
                         
-                        endif;
-                
-                        echo $major;                     
-                
+                    <?php while( have_rows('instructor') ) : the_row();                
+                           
+                            $instr_img = get_sub_field('instr_img');
+                            $instr_name = get_sub_field('instr_name');
+                            $major = get_sub_field('major'); ?>
+
+                        
+                            <div class="instructor">
+                                <?php echo wp_get_attachment_image( $instr_img['ID'], array( $instr_img['width'], $instr_img['height'] ) );?> 
+                            </div>
+
+                            <div class="title-instr">
+                                <ul>                        
+                                    <li><h1><?php echo $instr_name; ?></h1></li>
+
+                                    <?php
+                                    if( have_rows('instr_achievements') ):
+                                
+                                        while( have_rows('instr_achievements') ) : the_row();                
+                                            
+                                            $instr_achievement = get_sub_field('instr_achievement');?>
+                                            
+                                            <li><p><?php echo $instr_achievement;?></p></li>
                     
-                    endwhile;           
+                                        <?php endwhile;                        
+                                    
+                                    endif;?>
+                            
+                                    <li><p><?php echo $major;?></p></li>
+                                </ul>                     
+                            </div>
+                       
+                    <?php endwhile; ?>
+                             
                 
-                endif;
+                <?php endif;
 
             endif;
 
@@ -184,6 +192,8 @@ Template Name: Home
     <?php endif; ?>
 
 </section>
+
+<hr>
 
 
 

@@ -2128,9 +2128,32 @@ p{
    font-style: normal; 
 }
 .instructors{
-    margin: 20px;
+    width: 100%;
+    margin: 50px;
+    height: auto;
+    overflow:hidden;
+    
 }
-
+.instructor{    
+    float: left;
+    width: 40%;
+    height: 600px;
+    margin-right: 2%;
+    padding: 40px;     
+}
+.title-instr{
+    float: left;   
+    width: 40%;
+    height: 600px;
+    margin-right: 2%;
+    padding: 40px;       
+}
+.title-instr h1{
+    color: #00d9a6;
+}
+li{
+    list-style-type: none;
+}
 
 
 

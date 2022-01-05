@@ -104,7 +104,7 @@
 			</div>	
 
 			<div class="anchor-button">
-			     <a href="#about">about</a>   <a href="#classes">classes</a>    <a href="#gallery">gallery</a> 
+			     <a href="#about">about</a>   <a href="#classes">classes</a>    <a href="#gallery">gallery</a>  <a href="#instructors">instructors</a> 
 		    </div>
 			
 		</div>
